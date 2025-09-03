@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(240, 5%, 94%);
+  --foreground: hsl(0, 0%, 10%);
+  --card: hsl(0, 0%, 99%);
+  --card-foreground: hsl(0, 0%, 10%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 10%);
+  --primary: hsl(220, 13%, 18%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 77%);
+  --secondary-foreground: hsl(0, 0%, 10%);
+  --muted: hsl(240, 5%, 94%);
+  --muted-foreground: hsl(0, 0%, 42%);
+  --accent: hsl(0, 0%, 100%);
+  --accent-foreground: hsl(0, 0%, 10%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(220, 13%, 91%);
+  --input: hsl(0, 0%, 100%);
+  --ring: hsl(220, 13%, 18%);
+  --chart-1: hsl(220, 13%, 18%);
+  --chart-2: hsl(160, 60%, 45%);
+  --chart-3: hsl(30, 80%, 55%);
+  --chart-4: hsl(280, 65%, 60%);
+  --chart-5: hsl(210, 40%, 50%);
+  --font-sans: 'Poppins', sans-serif;
+  --font-serif: 'Poppins', sans-serif;
+  --font-mono: 'Poppins', monospace;
+  --radius: 0.8rem;
+}
+
+.dark {
+  --background: hsl(0, 0%, 5%);
+  --foreground: hsl(0, 0%, 95%);
+  --card: hsl(0, 0%, 8%);
+  --card-foreground: hsl(0, 0%, 95%);
+  --popover: hsl(0, 0%, 5%);
+  --popover-foreground: hsl(0, 0%, 95%);
+  --primary: hsl(220, 13%, 25%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 20%);
+  --secondary-foreground: hsl(0, 0%, 95%);
+  --muted: hsl(0, 0%, 10%);
+  --muted-foreground: hsl(0, 0%, 60%);
+  --accent: hsl(0, 0%, 15%);
+  --accent-foreground: hsl(0, 0%, 95%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(0, 0%, 15%);
+  --input: hsl(0, 0%, 8%);
+  --ring: hsl(220, 13%, 25%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  .smooth-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  .card-hover {
+    @apply smooth-transition hover:-translate-y-1 hover:shadow-xl;
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(220, 13%, 18%) 0%, hsl(0, 0%, 77%) 100%);
+  }
+  
+  .skill-bar {
+    background: linear-gradient(90deg, hsl(220, 13%, 18%) 0%, hsl(220, 13%, 35%) 100%);
+  }
+  
+  .code-overlay {
+    background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&h=900');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+  }
+
+  .code-background {
+    background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .primary-with-code {
+    background: linear-gradient(135deg, hsla(220, 13%, 18%, 0.9) 0%, hsla(220, 13%, 25%, 0.9) 100%), 
+                url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }
+  
+  .nav-link-active {
+    @apply text-primary font-semibold;
+  }
+}
